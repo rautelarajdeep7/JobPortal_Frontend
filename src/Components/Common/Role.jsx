@@ -5,7 +5,7 @@ import logo from '../../Assets/Logo/Job_Hunters_White_Small.png'
 import toast from 'react-hot-toast'
 import Cookies from 'js-cookie';
 import axios from 'axios'
-
+import { baseURL } from '../../Config/Config'
 const Role = () => {
 
     axios.defaults.withCredentials = true;  // It allows axios to send cookies with the request, and also allows axios to receive cookies from the server,
@@ -62,7 +62,7 @@ const Role = () => {
         }
         else {
             try {
-                const response = await axios.get(`http://localhost:3000/api/roleSetup/${role}/${UID}`, {
+                const response = await axios.get(`${baseURL}/roleSetup/${role}/${UID}`, {
                     headers: {
                         "authorization": `Bearer ${localStorage.getItem("authToken")}`  // Sending the authToekn in the headers to authenticate the user in backend before accessing the protected route.
                     }

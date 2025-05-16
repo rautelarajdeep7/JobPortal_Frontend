@@ -5,7 +5,7 @@ import logo from '../../Assets/Logo/Job_Hunters_White_Small.png'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom';
-
+import { baseURL } from '../../baseURL'
 const ForgotPassword = () => {
     let border = "border border-gray-500 rounded-md outline-none px-2 py-1";
     let error_box = "Error min-h-[1rem] float-right";
@@ -62,7 +62,7 @@ const ForgotPassword = () => {
                 const data = Object.fromEntries(form_Data);
 
                 try {
-                    const response = await axios.get(`http://localhost:3000/api/forgot-password/${data.email}`);
+                    const response = await axios.get(`${baseURL}/forgot-password/${data.email}`);
 
                     if (response.status == "201") {
                         otpBox.current.classList.remove('pointer-events-none', 'hidden', 'opacity-50')
@@ -99,7 +99,7 @@ const ForgotPassword = () => {
             const otp_inputs = "" + data.digit1 + data.digit2 + data.digit3 + data.digit4;
 
             try {
-                const response = await axios.get(`http://localhost:3000/api/forgot-password-otp-verify/${otp_inputs}/${data.email}`);
+                const response = await axios.get(`${baseURL}/forgot-password-otp-verify/${otp_inputs}/${data.email}`);
 
                 if (response.status == "201") {
                     passwordBox.current.classList.remove('pointer-events-none', 'hidden', 'opacity-50')
@@ -134,7 +134,7 @@ const ForgotPassword = () => {
 
             if (data.password) {      // run the condition only if password is not empty
                 try {
-                    const response = await axios.post(`http://localhost:3000/api/changePassword/`, data);
+                    const response = await axios.post(`${baseURL}/changePassword/`, data);
 
                     if (response.status == "201") {
                         // passwordBox.current.classList.add('pointer-events-none', 'opacity-50')  // Not required actually as the user will get redirected immediately

@@ -5,8 +5,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { newContext } from '../../Context/Context'
 import { Link, useNavigate } from 'react-router-dom';
-
-
+import baseURL from '../../config';
 
 const Dashboard = () => {
 
@@ -39,7 +38,7 @@ const Dashboard = () => {
         try {
             console.log("ID is : ", UID)
 
-            const response = await axios.get(`http://localhost:3000/api/user-dashboard/${UID}`, {
+            const response = await axios.get(`${baseURL}/user-dashboard/${UID}`, {
                 headers: {
                     'authorization': `Bearer ${token}`
                 }
@@ -92,7 +91,7 @@ const Dashboard = () => {
             form_Data.append('files', file);
 
             try {
-                const response = await axios.post(`http://localhost:3000/api/upload/${UID}`, form_Data, {
+                const response = await axios.post(`${baseURL}/upload/${UID}`, form_Data, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     }

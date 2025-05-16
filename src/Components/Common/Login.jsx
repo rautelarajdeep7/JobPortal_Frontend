@@ -1,6 +1,5 @@
 import React, { useState, useRef, useContext } from 'react'
 import { newContext } from '../../Context/Context.jsx'
-
 import './Error_msg.css'
 import logo from '../../Assets/Logo/Job_Hunters_White_Small.png'
 import axios from 'axios'
@@ -9,7 +8,7 @@ import toast from 'react-hot-toast'
 // We've used <Toaster/> in our App.jsx
 import { Link, useNavigate } from 'react-router-dom';
 import Role from './Role.jsx'
-
+import {baseURL} from '../../Config.js'  // This is the base URL for the backend API. It is used to make API calls to the backend server.
 
 
 const Login = () => {
@@ -119,7 +118,7 @@ const Login = () => {
             console.log("data from form is: ", data);
 
             try {
-                const response = await axios.post('http://localhost:3000/api/login', data);
+                const response = await axios.post(`${baseURL}/login`, data);
 
                 // console.log(response.headers.get('authorization'));  // This is how we get headers from the response in fetch API.
                 const token = response.headers['authorization'].split('Bearer ')[1] // This is how we get headers from the response in axios.This is the authorization JWT token which we will store in the local storage.
@@ -191,7 +190,7 @@ const Login = () => {
             // console.log(data)
 
             try {
-                const response = await axios.post('http://localhost:3000/api/signup', data);
+                const response = await axios.post(`${baseURL}/signup`, data);
 
                 if (response.status == "201") {
                     console.log("Form submitted successfully");

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import toast from 'react-hot-toast'
-
 import { Link, useNavigate } from 'react-router-dom';
-
+import baseURL from '../../config';
 
 import HeaderEmployee from './HeaderEmployee'
 import AsideBar from './AsideBar'
@@ -31,7 +30,7 @@ const UserHome = () => {
     try {
       console.log("ID is : ", UID)
 
-      const response = await axios.get(`http://localhost:3000/api/user-dashboard/${UID}`, {
+      const response = await axios.get(`${baseURL}user-dashboard/${UID}`, {
         headers: {
           'authorization': `Bearer ${token}`
         }
@@ -70,7 +69,7 @@ const UserHome = () => {
     }
     try {
 
-      const response = await axios.get(`http://localhost:3000/api/suggested-jobs/${UID}`, {
+      const response = await axios.get(`${baseURL}/suggested-jobs/${UID}`, {
         headers: {
           'authorization': `Bearer ${token}`
         }
@@ -116,7 +115,7 @@ const UserHome = () => {
       //   }
       // });
 
-      const response = await axios.post(`http://localhost:3000/api/apply/${UID}/${jobID}`, {}, {
+      const response = await axios.post(`${baseURL}/apply/${UID}/${jobID}`, {}, {
         headers: {
           'authorization': `Bearer ${token}`
         }

@@ -3,6 +3,7 @@ import HeaderEmployer from './HeaderEmployer'
 import toast from 'react-hot-toast'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import baseURL from '../../config';
 
 import SalaryRangeSelector from '../Extra/SalaryRangeSelector';
 
@@ -69,7 +70,7 @@ const EmployerDashboard = () => {
 
         async function getJobs() {
             try {
-                const response = await axios.get(`http://localhost:3000/api/all-jobs/${UID}`, {
+                const response = await axios.get(`${baseURL}/all-jobs/${UID}`, {
                     headers: {
                         'authorization': `Bearer ${token}`
                     }
@@ -112,7 +113,7 @@ const EmployerDashboard = () => {
         data = { ...data, skills: skill_array };
 
         try {
-            const response = await axios.post(`http://localhost:3000/api/create-job/${UID}`, data, {
+            const response = await axios.post(`${baseURL}/create-job/${UID}`, data, {
                 headers: {
                     'authorization': `Bearer ${token}`
                 }
@@ -158,7 +159,7 @@ const EmployerDashboard = () => {
         }
         try {
 
-            const response = await axios.get(`http://localhost:3000/api/see-applications/${jobID}`, {
+            const response = await axios.get(`${baseURL}/see-applications/${jobID}`, {
                 headers: {
                     'authorization': `Bearer ${token}`
                 }
