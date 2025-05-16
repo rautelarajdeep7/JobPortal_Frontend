@@ -3,7 +3,7 @@ import HeaderEmployer from './HeaderEmployer'
 import toast from 'react-hot-toast'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import baseURL from '../../config';
+import baseURL from '../../config.js'  
 
 import SalaryRangeSelector from '../Extra/SalaryRangeSelector';
 

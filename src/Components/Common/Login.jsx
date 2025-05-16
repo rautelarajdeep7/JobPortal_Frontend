@@ -8,8 +8,7 @@ import toast from 'react-hot-toast'
 // We've used <Toaster/> in our App.jsx
 import { Link, useNavigate } from 'react-router-dom';
 import Role from './Role.jsx'
-import {baseURL} from '../../Config.js'  // This is the base URL for the backend API. It is used to make API calls to the backend server.
-
+import baseURL from '../../config.js'  
 
 const Login = () => {
     axios.defaults.withCredentials = true;  // It allows axios to send cookies with the request, and also allows axios to receive cookies from the server,

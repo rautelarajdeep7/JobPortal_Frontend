@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom';
-import baseURL from '../../config';
+import baseURL from '../../config.js'  
 
 import HeaderEmployee from './HeaderEmployee'
 import AsideBar from './AsideBar'

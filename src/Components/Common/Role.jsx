@@ -5,7 +5,8 @@ import logo from '../../Assets/Logo/Job_Hunters_White_Small.png'
 import toast from 'react-hot-toast'
 import Cookies from 'js-cookie';
 import axios from 'axios'
-import { baseURL } from '../../Config/Config'
+import baseURL from '../../config.js'  
+
 const Role = () => {
 
     axios.defaults.withCredentials = true;  // It allows axios to send cookies with the request, and also allows axios to receive cookies from the server,

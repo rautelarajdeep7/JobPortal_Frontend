@@ -5,7 +5,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { newContext } from '../../Context/Context'
 import { Link, useNavigate } from 'react-router-dom';
-import baseURL from '../../config';
+import baseURL from '../../config.js'  
 
 const Dashboard = () => {
 

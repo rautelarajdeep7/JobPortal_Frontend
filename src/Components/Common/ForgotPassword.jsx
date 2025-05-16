@@ -5,7 +5,8 @@ import logo from '../../Assets/Logo/Job_Hunters_White_Small.png'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom';
-import { baseURL } from '../../baseURL'
+import baseURL from '../../config.js'  
+
 const ForgotPassword = () => {
     let border = "border border-gray-500 rounded-md outline-none px-2 py-1";
     let error_box = "Error min-h-[1rem] float-right";
