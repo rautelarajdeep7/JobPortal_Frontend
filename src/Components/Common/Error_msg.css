@@ -1,0 +1,10 @@
+.Error{
+    visibility: hidden;
+    color: red;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.NoError{
+    color: green;
+}
