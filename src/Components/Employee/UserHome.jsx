@@ -30,7 +30,7 @@ const UserHome = () => {
     try {
       console.log("ID is : ", UID)
 
-      const response = await axios.get(`${baseURL}user-dashboard/${UID}`, {
+      const response = await axios.get(`${baseURL}/user-dashboard/${UID}`, {
         headers: {
           'authorization': `Bearer ${token}`
         }
