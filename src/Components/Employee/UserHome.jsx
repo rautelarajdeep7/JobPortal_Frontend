@@ -20,7 +20,6 @@ const UserHome = () => {
   const token = localStorage.getItem("authToken");
   const [allJobs, setAllJobs] = useState([]);
 
-
   const fetchUserData = async () => {
 
     if (!UID) {
