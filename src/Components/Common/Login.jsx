@@ -117,6 +117,7 @@ const Login = () => {
             console.log("data from form is: ", data);
 
             try {
+                console.log("Base URL is : ", baseURL), " and full url is : ", `${baseURL}/login`;
                 const response = await axios.post(`${baseURL}/login`, data);
 
                 // console.log(response.headers.get('authorization'));  // This is how we get headers from the response in fetch API.
@@ -189,6 +190,8 @@ const Login = () => {
             // console.log(data)
 
             try {
+                console.log("Base URL is : ", baseURL), " and full url is : ", `${baseURL}/signup`;
+
                 const response = await axios.post(`${baseURL}/signup`, data);
 
                 if (response.status == "201") {
